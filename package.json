@@ -1,0 +1,44 @@
+{
+  "name": "@finprint/crypto-utils",
+  "version": "1.0.0",
+  "author": "Finprint",
+  "license": "BSD-3-Clause",
+  "description": "Cryptographic utility functions for use with the Finprint protocol.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "compile:watch": "npm run compile -- --watch",
+    "prepack": "rm -rf dist && npm run compile",
+    "test": "npm run compile && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/finprint/crypto-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/finprint/crypto-utils/issues"
+  },
+  "homepage": "https://github.com/finprint/crypto-utils#readme",
+  "ava": {
+    "files": [
+      "dist/test/**/*.test.js"
+    ],
+    "sources": [
+      "dist/src/**/*.js"
+    ],
+    "failWithoutAssertions": false
+  },
+  "dependencies": {
+    "libsodium-wrappers": "0.7.5",
+    "typescript": "3.6.2"
+  },
+  "devDependencies": {
+    "@types/libsodium-wrappers": "0.7.5",
+    "@types/node": "12.7.4",
+    "ava": "2.3.0"
+  }
+}
